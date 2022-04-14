@@ -19,7 +19,7 @@ public class Game {
     }
 
     private void init() {
-        setGameStatus(GameStatus.PALYING);
+        setGameStatus(GameStatus.PLAYING);
         computer = new Computer();
         player = new Player();
     }

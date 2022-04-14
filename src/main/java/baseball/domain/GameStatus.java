@@ -1,7 +1,7 @@
 package baseball.domain;
 
 public enum GameStatus {
-    PALYING,
+    PLAYING,
     END
     ;
 }
