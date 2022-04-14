@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-class PlayerTest {
+class ComputerTest {
     Computer computer = null;
     List<Integer> numbers = null;
     
