@@ -2,6 +2,7 @@ package baseball.domain;
 
 import baseball.constant.GameConfig;
 import baseball.util.NumberUtils;
+import baseball.util.ValidationCheck;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Console;
 
@@ -30,6 +31,7 @@ public class Game {
         OutputView.viewInputMsg();
 
         String input = Console.readLine();
+        ValidationCheck.checkAll(input, GameConfig.NUM_SIZE, GameConfig.START_NUM, GameConfig.END_NUM);
 
         player.setNumbers(NumberUtils.splitNum(input));
     }
@@ -38,6 +40,7 @@ public class Game {
         OutputView.viewEndMsg();
 
         String input = Console.readLine();
+        ValidationCheck.endChk(input);
 
         if(input.equals(GameConfig.KEY_END)){
             setGameStatus(GameStatus.END);
