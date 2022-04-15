@@ -22,6 +22,10 @@ public class Game {
         this.gameStatus = gameStatus;
     }
 
+    public Game() {
+        init();
+    }
+
     private void init() {
         setGameStatus(GameStatus.PLAYING);
         computer = new Computer();
@@ -29,10 +33,9 @@ public class Game {
     }
 
     public void startGame() {
-        init();
+        if(gameStatus.equals(GameStatus.RESTART)){ init(); }
 
         OutputView.viewInputMsg();
-
         String input = Console.readLine();
         ValidationCheck.checkAll(input, GameConfig.NUM_SIZE, GameConfig.START_NUM, GameConfig.END_NUM);
 
@@ -41,7 +44,7 @@ public class Game {
         gameResult();
     }
 
-    public void gameResult() {
+    private void gameResult() {
         Refree refree = new Refree(computer.getNumbers(), player.getNumbers());
         Map<BallStatus, Integer> score = refree.getScore();
 
@@ -53,26 +56,24 @@ public class Game {
         }
     }
 
-    public String getScoreMsg(int strikeCount, int ballCount) {
+    private String getScoreMsg(int strikeCount, int ballCount) {
         String resultMsg = "";
 
-        if(strikeCount > 0) { resultMsg += strikeCount + Message.MSG_STRIKE; }
-        if(!resultMsg.isEmpty()) { resultMsg += " "; }
         if(ballCount > 0) { resultMsg += ballCount + Message.MSG_BALL; }
+        if(!resultMsg.isEmpty()) { resultMsg += " "; }
+        if(strikeCount > 0) { resultMsg += strikeCount + Message.MSG_STRIKE; }
         if(strikeCount == 0 && ballCount == 0){ resultMsg += Message.MSG_NOTHING; }
 
         return resultMsg;
     }
 
-    public void endGame() {
+    private void endGame() {
         OutputView.viewEndMsg();
 
         String input = Console.readLine();
         ValidationCheck.endChk(input);
 
-        if(input.equals(GameConfig.KEY_END)){
-            setGameStatus(GameStatus.END);
-            return;
-        }
+        if(input.equals(GameConfig.KEY_RESTART)){ setGameStatus(GameStatus.RESTART); }
+        if(input.equals(GameConfig.KEY_END)){ setGameStatus(GameStatus.END); }
     }
 }
