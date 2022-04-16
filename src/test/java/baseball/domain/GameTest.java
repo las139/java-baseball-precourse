@@ -1,11 +1,8 @@
-package baseball;
+package baseball.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import baseball.domain.Game;
-import baseball.domain.GameStatus;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

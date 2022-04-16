@@ -1,4 +1,4 @@
-package baseball;
+package baseball.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,7 +6,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import baseball.constant.GameConfig;
 import baseball.constant.Message;
-import baseball.util.ValidationCheck;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
