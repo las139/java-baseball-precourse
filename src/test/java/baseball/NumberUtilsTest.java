@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-class NumberTest {
+class NumberUtilsTest {
     
     @Test
     @DisplayName("랜덤 번호 생성 범위 1 ~ 9 테스트")
