@@ -1,10 +1,10 @@
 package baseball.constant;
 
-public class GameConfig {
-	public static final int START_NUM = 1;
-	public static final int END_NUM = 9;
-	public static final int NUM_SIZE = 3;
-
-	public static final String KEY_RESTART = "1";
-	public static final String KEY_END = "2";
+public final class GameConfig {
+	public static int START_NUM = 1;
+	public static int END_NUM = 9;
+	public static int NUM_SIZE = 3;
+	
+	public static String KEY_RESTART = "1";
+	public static String KEY_END = "2";
 }
